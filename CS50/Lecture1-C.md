@@ -1,4 +1,4 @@
-# CS50 — Lecture 1: C (Deep Dive)
+# CS50 — Lecture 1: C 
 ### Same ideas as Scratch — now you type them, and the training wheels come off
 
 Lecture 1 takes every building block from Scratch — functions, conditionals, booleans, loops, variables — and re-teaches them in **C**, a real, text-based programming language. Nothing conceptually new is happening; you already know *what* a loop is. What's new is **syntax** (the exact punctuation a computer demands), **compiling** (turning your text into something the machine can run), and the unforgiving precision C requires. That precision is the entire reason C is taught first: it forces you to see what higher-level languages hide.
