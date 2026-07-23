@@ -53,10 +53,10 @@ That `\n` at the end of `"hello, world\n"` is a **newline** — it moves the cur
 You wrote text a human can read. The CPU can't run that — it only understands **machine code**, raw binary instructions (0s and 1s). **Compiling** is the translation step in between.
 
 - The text you write is **source code**.
-- A **compiler** (CS50 uses one called `clang`) translates it into **machine code** the computer can execute.
-- In CS50 you run **`make hello`**, which figures out the right compiler command for you, then run **`./hello`** to execute the result. (`make` is a convenience layer on top of `clang`; the full four-step compilation pipeline gets unpacked in **Lecture 2**.)
+- A **compiler** translates it into **machine code** the computer can execute. "Compiler" is a *category* of program, not one specific tool: `gcc` (the long-standing GNU standard) and `clang` (the LLVM-based compiler, default on macOS) are the two ubiquitous C compilers, and either does the job identically. CS50 happens to use `clang` — but nothing about the concepts depends on that choice.
+- You rarely invoke the compiler by hand for anything real — a **build tool** runs the command for you so you don't retype it every time. `make` is the classic Unix one (CS50 uses it: `make hello`, then `./hello` to run the result), but it's one convention among several; the orthodox idea is simply "a tool that automates the compile command."
 
-The takeaway to carry forward: **there are two files** — your readable source code and the compiled program — and every time you change the source, you must recompile before the change takes effect. This edit → compile → run loop is the rhythm of C.
+The takeaway to carry forward: **there are two files** — your readable source code and the compiled program — and every time you change the source, you must recompile before the change takes effect. This edit → compile → run loop is the rhythm of C, whatever compiler and build tool you use. (The full four-stage compilation pipeline gets unpacked in **Lecture 2**.)
 
 ---
 
