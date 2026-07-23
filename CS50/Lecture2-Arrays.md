@@ -1,4 +1,4 @@
-# CS50 — Lecture 2: Arrays
+# CS50 — Lecture 2: Arrays (Deep Dive)
 ### What "compile" really means, and how strings are secretly arrays
 
 Lecture 1 handed you a black box: you typed `make hello`, and a runnable program appeared. Lecture 2 opens that box — you learn the four real steps a compiler takes — and then introduces **arrays**: a way to store many values of the same type in a row. The lecture's big reveal is that **strings were arrays all along**, which explains a lot of C's quirks and sets up the harder Memory lecture to come. It all culminates in writing actual cryptography.
@@ -272,6 +272,55 @@ Look at how naturally the whole lecture converges on this one problem:
 - You **iterate over the string** of plaintext (arrays + `strlen`).
 - You shift each letter with **ASCII arithmetic** (`ctype.h` to detect and preserve case, then add the key).
 - You return an **exit status** to report bad input (e.g., a missing or non-numeric key).
+
+Here's the whole thing in code. Notice the shift logic lives in its own function — one clear job, easy to test, and it keeps `main` readable:
+
+```c
+#include <cs50.h>
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Shift one character forward by `key`, preserving case; leave non-letters alone
+char rotate(char c, int key)
+{
+    if (isupper(c))
+    {
+        return 'A' + (c - 'A' + key) % 26;
+    }
+    if (islower(c))
+    {
+        return 'a' + (c - 'a' + key) % 26;
+    }
+    return c;   // spaces, digits, punctuation pass through untouched
+}
+
+int main(int argc, string argv[])
+{
+    // Require exactly one argument: the key
+    if (argc != 2)
+    {
+        printf("Usage: ./caesar key\n");
+        return 1;               // non-zero exit status: bad input
+    }
+
+    int key = atoi(argv[1]);    // turn the argument string "3" into the int 3
+    string plaintext = get_string("plaintext:  ");
+
+    printf("ciphertext: ");
+    for (int i = 0, n = strlen(plaintext); i < n; i++)
+    {
+        printf("%c", rotate(plaintext[i], key));
+    }
+    printf("\n");
+    return 0;                   // success
+}
+```
+
+The heart of it is `(c - 'A' + key) % 26`. Subtracting `'A'` maps `A–Z` onto `0–25`, you add the key and wrap with `% 26` so `Z` rolls back around to `A`, then add `'A'` back to return to ASCII. Each idea from the lecture is doing real work: `argv` supplies the key, `strlen` bounds the loop, `ctype.h` and ASCII math do the shift, and the exit status reports misuse.
+
+(One honest simplification: `atoi` quietly returns `0` for non-numeric input rather than rejecting it, so a production version would first check that every character of `argv[1]` is a digit — the actual CS50 assignment requires exactly that. It's left out here to keep the shape of the program clear.)
 
 That convergence is the point: every piece introduced in Lecture 2 is a component of a genuinely useful program. (Real modern cryptography is vastly more sophisticated — the Caesar cipher is trivially breakable — but the plaintext → cipher → ciphertext model is exactly right.)
 
