@@ -1,4 +1,4 @@
-# CS50 — Lecture 1: C 
+# CS50 — Lecture 1: C
 ### Same ideas as Scratch — now you type them, and the training wheels come off
 
 Lecture 1 takes every building block from Scratch — functions, conditionals, booleans, loops, variables — and re-teaches them in **C**, a real, text-based programming language. Nothing conceptually new is happening; you already know *what* a loop is. What's new is **syntax** (the exact punctuation a computer demands), **compiling** (turning your text into something the machine can run), and the unforgiving precision C requires. That precision is the entire reason C is taught first: it forces you to see what higher-level languages hide.
@@ -110,6 +110,18 @@ Core types:
 | `string` | text (a CS50 convenience) | — |
 
 Note `string` isn't really a built-in C type — it's an abstraction the **CS50 library** provides to keep things gentle early on. Under the hood it's something more primitive, and that curtain gets pulled back in **Lecture 4 (Memory)**.
+
+### Primitive vs. derived types
+The types in the table above are C's **primitive** (or **basic**) types — the *atomic* building blocks, not constructed from anything smaller. But they're only half the type system. C also has **derived types**: types *built out of* other types. The two you'll lean on most:
+
+- **Arrays** — many values of the *same* type, in a row: `int scores[3]` has the type "array of 3 ints." (Lecture 2.)
+- **Structs** — several values of *different* types bundled under one name: a `person` with a `string name` and an `int age`. (Lectures 4–5.)
+
+C also has `union`, `enum`, and — importantly — **pointers**, which are derived types as well.
+
+A point of terminology worth nailing down: an array or struct **is itself a type**, not merely "a bunch of values." `int[3]` is as genuine a type as `int` — it's just a *derived* one, composed from `int`. So the real distinction isn't type vs. non-type; it's **primitive** (atomic) vs. **derived** (composed). What an array *groups* is **values** (data) of one type, not types themselves. Array and struct types together are also called **aggregate types**, since you reach their parts by index (`scores[0]`) or field name (`p.age`).
+
+This also pins down exactly where `string` sits. It's not a primitive of its own — it's really the derived type `char *` (a pointer), wearing a friendlier name. When Lecture 4 pulls the curtain back, *that's* what it reveals: `string` was a derived pointer type the whole time.
 
 ### Declaring vs. initializing
 ```c
@@ -286,6 +298,16 @@ Because `1` and `3` are both ints, C computes `1 / 3` as integer division (= 0) 
 ```c
 float result = (float) 1 / 3;   // now 0.3333...
 ```
+
+---
+
+## 11. Debugging
+
+Bugs are not failure — they're the job. CS50 teaches three tools, in increasing sophistication:
+
+- **`printf` debugging** — sprinkle print statements to see the actual values of variables at each step. Crude but effective.
+- **`debug50`** — a proper **debugger** that pauses your program at a **breakpoint** and lets you step through line by line, watching variables change in real time.
+- **Rubber-duck debugging** — explain your code out loud, line by line, to something that can't help you (a rubber duck). Articulating it forces you to spot the flaw yourself. It sounds silly and it works.
 
 ---
 
