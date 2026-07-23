@@ -289,16 +289,6 @@ float result = (float) 1 / 3;   // now 0.3333...
 
 ---
 
-## 11. Debugging
-
-Bugs are not failure — they're the job. CS50 teaches three tools, in increasing sophistication:
-
-- **`printf` debugging** — sprinkle print statements to see the actual values of variables at each step. Crude but effective.
-- **`debug50`** — a proper **debugger** that pauses your program at a **breakpoint** and lets you step through line by line, watching variables change in real time.
-- **Rubber-duck debugging** — explain your code out loud, line by line, to something that can't help you (a rubber duck). Articulating it forces you to spot the flaw yourself. It sounds silly and it works.
-
----
-
 ## The big picture
 Lecture 1 doesn't introduce new *concepts* — it introduces **rigor**. The same six building blocks from Scratch, now expressed in a language where:
 
