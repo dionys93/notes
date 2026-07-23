@@ -232,6 +232,24 @@ The deeper lesson mirrors Lecture 0: a file is *just bytes*. A JPEG, a BMP, a te
 
 ---
 
+## 13. A wider lens: where pointers came from, and why they outlive C
+
+It's natural to wonder whether all this pointer machinery is just a C-specific tax — something you'll never touch again once you're "off the metal." It isn't. The pointer is one of the most universal ideas in computing; what's specific to C is only how *nakedly* it exposes it.
+
+The concept didn't originate with C. One memory cell holding the *address* of another is as old as the stored-program computer itself — indirect addressing existed in machine code and assembly before high-level languages did. Harold Lawson is generally credited with making the pointer a first-class *language* feature, in PL/I in the mid-1960s, and C (1972) inherited and popularized it rather than inventing it. The truly timeless idea underneath the syntax is **indirection**: referring to something by *where it is* rather than carrying a copy of it around. That idea is so foundational there's a well-worn aphorism for it, usually credited to David Wheeler — *any problem in computer science can be solved with another layer of indirection.*
+
+Here's the part that answers your question directly: **higher-level languages didn't abolish pointers — they renamed them "references" and made them automatic and safe.** In Java, Python, JavaScript, C#, and Ruby, every object variable is a reference, which is a managed pointer under the hood. And because of that, the two traps you just learned reappear *verbatim* in languages that claim not to have pointers:
+
+- The `t = s` trap — copying the address, not the data — is exactly why `b = a` on a list in Python makes both names refer to the *same* list, so mutating one changes the other. That's pointer aliasing wearing a friendly name.
+- The `== compares addresses` trap is why Python distinguishes `is` (same object — identity, address-like) from `==` (same value), and why Java splits `==` from `.equals()`. It's the `strcmp` lesson, reincarnated.
+- C's `NULL` is Python's `None`, Java's `null`, JavaScript's `null`/`undefined` — and the crashes they cause are the managed descendants of the segfault. Tony Hoare, who introduced null references back in 1965, later called it his "billion-dollar mistake," precisely because the problem propagated into nearly every language that followed.
+
+So understanding pointers doesn't just help you write C — it gives you the *accurate mental model* for a whole class of bugs (shallow vs. deep copies, shared mutable state, identity vs. equality, null errors) in languages that supposedly spare you from them. You stop being surprised, because you can see the references underneath.
+
+And pointers stay fully *explicit* well outside C, anywhere performance or control matters: C++ (with `unique_ptr`/`shared_ptr` "smart pointers" that automate the `free`), Go (explicit `&` and `*`, but with garbage collection), and most tellingly **Rust** — a modern language whose entire design, its ownership-and-borrowing system, is a direct reckoning with the exact hazards this lecture introduced (dangling pointers, use-after-free, leaks). Rust's whole pitch is essentially "pointers without the footguns." The fact that a language in wide use today is organized *around* solving these problems is the strongest evidence that they never went away — they just got managed.
+
+---
+
 ## The big picture
 Lecture 4 is the pivot of the whole course. Its one idea — **memory is addressed, and a pointer holds an address** — retroactively explains everything that came before:
 
