@@ -1,4 +1,4 @@
-# CS50 — Lecture 0: Scratch (Deep Dive)
+# CS50 — Lecture 0: Scratch 
 ### What computing actually *is*, before any real code
 
 Lecture 0 looks like the easy one — it ends with drag-and-drop cartoon blocks. Don't be fooled. It quietly installs every mental model the rest of the course depends on: how information is represented, what an algorithm is, why efficiency matters, and the core building blocks of *all* programming. Nail this and the hard lectures later have somewhere to land.
