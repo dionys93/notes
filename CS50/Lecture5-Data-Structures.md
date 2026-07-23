@@ -1,4 +1,4 @@
-# CS50 — Lecture 5: Data Structures (Deep Dive)
+# CS50 — Lecture 5: Data Structures
 ### Where structs, pointers, and malloc finally build something
 
 Lecture 4 was the wall; Lecture 5 is the reward for climbing it. Every tool you earned there — **structs** to bundle data, **pointers** to link things together, **malloc** to grow memory on demand — now combines to build structures that arrays alone can't. And the lens for judging them is Lecture 3's: each structure trades **time against space**, and choosing the right one for the job *is* the engineering. There's no "best" data structure — only the right one for what you're doing.
