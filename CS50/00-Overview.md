@@ -103,18 +103,6 @@ A quick map before you dive in: CS50 is really two arcs. Lectures 0–5 teach yo
 
 ---
 
-## AI (interlude)
-**Big idea: modern AI is pattern-recognition learned from data, not hand-coded rules.**
-
-- Early "AI" was just clever **conditionals and rules** (decision trees). It works but doesn't scale to messy real-world problems.
-- **Machine learning** flips it: instead of writing rules, you show the system many examples and let it learn patterns. **Neural networks** stack simple math into layers that recognize increasingly complex features.
-- **Large language models (LLMs)** predict the next word/token, trained on enormous text. Powerful, but they **hallucinate** — they generate plausible text, not guaranteed truth.
-- Practical thread: **prompt engineering** (how you ask shapes what you get) and using AI as a coding partner — CS50 even has its own AI "rubber duck" tutor that guides rather than hands over answers.
-
-**Takeaway:** treat AI as a confident, fast, occasionally-wrong assistant. Verify; don't outsource your judgment.
-
----
-
 ## Lecture 7 — SQL
 **Big idea: when data outgrows spreadsheets, you need a real database.**
 
