@@ -1,4 +1,4 @@
-# CS50 — Lecture 5: Data Structures
+# CS50 — Lecture 5: Data Structures (Deep Dive)
 ### Where structs, pointers, and malloc finally build something
 
 Lecture 4 was the wall; Lecture 5 is the reward for climbing it. Every tool you earned there — **structs** to bundle data, **pointers** to link things together, **malloc** to grow memory on demand — now combines to build structures that arrays alone can't. And the lens for judging them is Lecture 3's: each structure trades **time against space**, and choosing the right one for the job *is* the engineering. There's no "best" data structure — only the right one for what you're doing.
@@ -130,13 +130,70 @@ unsigned int hash(string word)
 
 To store "apple," you hash it to an index and drop it in that slot (**bucket**). To look it up later, you hash it *again* — landing at the same slot instantly, without scanning. That's the `O(1)`.
 
-The complication is **collisions**: two different keys hashing to the *same* bucket ("apple" and "avocado" both starting with A). The standard fix is **separate chaining** — each bucket isn't a single slot but the head of a **linked list**, so colliding entries just chain together:
+The complication is **collisions**: two different keys hashing to the *same* bucket ("apple" and "avocado" both starting with A). The standard fix is **separate chaining** — each bucket isn't a single slot but the head of a **linked list**, so colliding entries just chain together.
+
+Here's the whole thing assembled — and notice it's built entirely from the pieces you already have, an array of the linked-list nodes from section 3:
 
 ```c
-node *table[26];   // an array of 26 linked lists, one per bucket
+#define BUCKETS 26        // one bucket per starting letter, A–Z
+#define LENGTH  45        // max word length
+
+// Each node stores its OWN copy of the word, plus a pointer to the next node in the chain
+typedef struct node
+{
+    char word[LENGTH + 1];
+    struct node *next;
+}
+node;
+
+// The table: an array of BUCKETS chains. As a global, every bucket starts NULL (empty).
+node *table[BUCKETS];
+
+// Hash a word to a bucket number in the range 0–25, by its first letter
+unsigned int hash(string word)
+{
+    // toupper(word[0]) is the first letter, forced to uppercase: 'A'..'Z'.
+    // But letters are ASCII numbers ('A' is 65, 'Z' is 90), and our array only
+    // has indices 0..25. Subtracting 'A' shifts a letter to its alphabet position:
+    //     'A' - 'A' == 0,   'B' - 'A' == 1,   ...   'Z' - 'A' == 25
+    // giving a valid bucket index. (Plain char arithmetic — see Lecture 2.)
+    return toupper(word[0]) - 'A';
+}
+
+// Insert a word into the table
+bool insert(string word)
+{
+    node *n = malloc(sizeof(node));   // a node on the heap
+    if (n == NULL)                    // malloc can fail — always check
+    {
+        return false;
+    }
+    strcpy(n->word, word);            // copy the word INTO the node (Lecture 4: a real copy)
+
+    unsigned int i = hash(word);      // find its bucket...
+    n->next = table[i];               // ...point the node at the chain's current head...
+    table[i] = n;                     // ...and make it the new head — O(1) prepend
+    return true;
+}
+
+// Is a word in the table?
+bool contains(string word)
+{
+    unsigned int i = hash(word);                                 // hash once to pick the bucket
+    for (node *tmp = table[i]; tmp != NULL; tmp = tmp->next)     // then walk only that chain
+    {
+        if (strcmp(tmp->word, word) == 0)   // compare CONTENTS, not addresses (Lecture 4: strcmp, not ==)
+        {
+            return true;
+        }
+    }
+    return false;
+}
 ```
 
-Notice the payoff: a hash table is *made of* the earlier structures — an array of linked lists. Its performance lives and dies by the hash function: a good one spreads keys evenly and keeps chains short (fast); a bad one dumps everything into one bucket, degrading to a single `O(n)` linked list. The trade-off here is **speed bought with memory and complexity** — you allocate a big array and accept a fiddlier implementation in exchange for that `O(1)`.
+Trace the speed through `contains`: you hash the word *once* to jump straight to one bucket, then search only that bucket's short chain — never the whole dataset. If the hash spreads words evenly, each chain stays tiny and lookup is effectively `O(1)`. Two details are Lecture 4 paying off directly: `strcpy` gives each node its *own* copy of the word (so nothing dangles), and `contains` uses `strcmp` rather than `==`, because `==` would compare addresses instead of characters.
+
+Notice the payoff: a hash table is *made of* the earlier structures — an array of linked lists. Its performance lives and dies by the hash function: a good one spreads keys evenly and keeps chains short (fast); a bad one dumps everything into one bucket, degrading to a single `O(n)` linked list (which is why this first-letter hash is only a teaching toy — real hash functions mix in every character). The trade-off here is **speed bought with memory and complexity** — you allocate a big array and accept a fiddlier implementation in exchange for that `O(1)`.
 
 ---
 
