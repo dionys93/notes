@@ -1,7 +1,7 @@
-# CS50 — Lecture 7: SQL (Deep Dive)
+# CS50 — Lecture 7: SQL
 ### When data outgrows a file — storing, relating, and querying at scale
 
-Lecture 6 left you able to read and write files in Python, including CSVs. This lecture starts with a problem: **files don't scale.** A spreadsheet is fine for a hundred rows and miserable for a million — slow to search, easy to corrupt, and hopeless when many people read and write at once. The fix is a **database**, and the language for talking to one is **SQL**. Along the way, the data structures from Lecture 5 quietly return at industrial scale, and you meet two real-world dangers — race conditions and SQL injection — that separate toy programs from production ones.
+Lecture 6 gave you Python, and with it the ability to work with files and data. This lecture starts from a familiar-looking place — data sitting in a flat file, like a spreadsheet or a **CSV** (comma-separated values) — and confronts a problem: **files don't scale.** A spreadsheet is fine for a hundred rows and miserable for a million — slow to search, easy to corrupt, and hopeless when many people read and write at once. The fix is a **database**, and the language for talking to one is **SQL**. Along the way, the data structures from Lecture 5 quietly return at industrial scale, and you meet two real-world dangers — race conditions and SQL injection — that separate toy programs from production ones.
 
 ---
 
