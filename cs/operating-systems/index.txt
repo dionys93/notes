@@ -1,7 +1,0 @@
-managing the machine's resources
-processes-and-threads — the unit of execution, context switching, isolation
-scheduling — sharing one CPU across many tasks (round-robin, priorities)
-virtual-memory — paging and address translation; the illusion of private memory (↔ memory/)
-concurrency — threads, locks, deadlock; the race conditions from data-and-databases/ at the OS level
-file-systems — how persistent storage is named, structured, and cached
-system-calls — the user-space ↔ kernel boundary, and what a program can't do alone
