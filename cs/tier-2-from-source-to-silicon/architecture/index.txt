@@ -1,0 +1,7 @@
+from logic gates to a running processor
+logic-gates-and-boolean-algebra — AND/OR/NOT as physical building blocks (↔ foundations/ booleans)
+combinational-and-sequential-logic — adders, flip-flops, memory built from gates
+cpu-and-instruction-sets — fetch-decode-execute, ISAs, registers
+assembly-and-machine-code — the CPU's own language (↔ toolchain/machine-code-and-assembly)
+memory-hierarchy-and-caches — registers → cache → RAM → disk, and locality (↔ algorithms/time-vs-space)
+pipelining — overlapping instructions to run faster
