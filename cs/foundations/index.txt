@@ -1,0 +1,10 @@
+the universal building blocks
+variables-and-types (L1) — primitive vs. derived vs. aggregate types
+type-systems-compared (L1, L6) — static vs. dynamic typing across languages
+conditionals-and-booleans (L0, L1)
+loops (L0, L1) — while, for, do-while
+functions (L1) — parameters, return values, the input→output box
+declaration-order-and-hoisting (L1) — C prototypes vs. JS hoisting vs. Python vs. Java
+recursion (L3) — base case, recursive case, the stack cost
+abstraction (L0 → all) — the spine of the whole course
+correctness-design-style (L1) — the three axes of good code
