@@ -1,0 +1,7 @@
+process and its cost
+searching (L3) — linear vs. binary, the sorted precondition
+sorting (L3) — bubble, selection, merge (with C code)
+big-o-omega-theta (L3) — bounds on growth vs. best/worst case
+algorithmic-paradigms (L3) — brute force, divide & conquer, greedy, DP, backtracking, randomized
+computational-difficulty (L3) — P, NP-complete, undecidable, the halting problem
+time-vs-space (L3, L5) — the trade-off that organizes everything
