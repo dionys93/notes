@@ -1,6 +1,0 @@
-how machines talk to each other
-the-layered-model (L8) — link → internet → transport → application; the web is just the top layer
-ip-addressing (L8) — how devices are identified (IPv4/IPv6)
-routing (L8) — how packets find a path across many networks
-dns (L8) — the internet's phone book: names → addresses (used well beyond the web — email, too)
-transport-protocols (L8) — TCP vs. UDP, ports, reliable delivery
