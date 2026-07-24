@@ -1,4 +1,0 @@
-never trust input
-input-validation (L2, L7) — the recurring instinct
-sql-injection (L7) — and parameterized queries
-cryptography-basics (L2) — plaintext/key/cipher/ciphertext, Caesar (candidate for its own crypto/ directory)
