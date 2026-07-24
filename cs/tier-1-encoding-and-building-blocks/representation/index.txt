@@ -1,0 +1,7 @@
+how information is encoded
+binary-and-number-bases (L0) — base-2, base-10, base-16, place values
+bits-bytes-and-why-eight (L0) — the bit-vs-hardware distinction, why a byte is 8 bits
+ascii-and-unicode (L0, L2) — characters as numbers, encoding standards
+hexadecimal (L0, L4) — base-16, why it maps cleanly to bytes, 0x
+color-and-media (L0) — RGB, pixels, images, video, sound as numbers
+note — arithmetic on these encodings lives in text-process/char-arithmetic
