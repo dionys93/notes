@@ -1,0 +1,7 @@
+searching, transforming, and analyzing text
+string-basics — slicing, searching, replacing, joining (across languages)
+char-arithmetic — letter − 'A', case conversion, the Caesar shift
+regex — pattern matching (↔ theory/finite-automata)
+parsing-and-tokenizing — turning flat text into structure (↔ compilers/lexing-and-tokenizing)
+string-search-algorithms — KMP, Boyer-Moore, Rabin-Karp
+edit-distance — Levenshtein, string similarity
