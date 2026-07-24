@@ -1,0 +1,6 @@
+string-basics — slicing, searching, replacing, joining (across languages)
+char-arithmetic — currently parked in representation/, but it's a manipulation technique, so it arguably belongs here
+regex — pattern matching (the child you were placing)
+parsing-and-tokenizing — turning flat text into structure
+string-search-algorithms — KMP, Boyer-Moore, Rabin-Karp
+edit-distance — Levenshtein, string similarity
