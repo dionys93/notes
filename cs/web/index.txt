@@ -1,0 +1,9 @@
+programs on the internet
+how-the-internet-works (L8) — IP, DNS, TCP/IP, HTTP, status codes
+html-and-the-dom (L8) — structure as a tree
+css (L8) — style, selectors, the cascade, responsive design
+javascript-behavior-and-events (L8) — DOM manipulation, event listeners
+client-vs-server (L9) — where code runs and why it matters
+flask-routes-and-templates (L9) — URL→function, Jinja
+sessions-cookies-and-state (L9) — working around stateless HTTP
+apis-and-json (L9) — program-to-program data
