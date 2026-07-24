@@ -1,0 +1,7 @@
+turning language into machine code, in depth
+lexing-and-tokenizing — source text → tokens (↔ text-process/parsing-and-tokenizing)
+parsing-and-asts — tokens → an abstract syntax tree (↔ theory/formal-languages-and-grammars)
+semantic-analysis — type checking, scope and name resolution
+code-generation — walking the AST to emit target code
+optimization — making the output smaller and faster
+note — the deep version of toolchain/compilation-pipeline
