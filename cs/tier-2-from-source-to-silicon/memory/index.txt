@@ -1,0 +1,9 @@
+addresses and what lives at them
+pointers (L4) — &, *, declaring a pointer
+strings-as-char-arrays (L2, L4) — the null terminator, why "HI!" is 4 bytes
+pointer-arithmetic-and-arrays (L4) — s[i] == *(s + i)
+stack-and-heap (L4) — memory regions, stack overflow, recursion's cost
+dynamic-allocation (L4) — malloc/free, the copy problem
+memory-errors (L4) — segfaults, leaks, garbage values, valgrind
+references-across-languages (L4, L6) — the pointer's afterlife, null's "billion-dollar mistake," indirection, history
+note — the hardware view lives in architecture/; the OS view in operating-systems/virtual-memory
