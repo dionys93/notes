@@ -1,0 +1,5 @@
+the models, and the limits of what code can do
+formal-languages-and-grammars — how languages are specified (↔ text-process/regex, compilers/)
+finite-automata — regular languages as an abstract model (the runnable form lives in text-process/regex)
+turing-machines — the model that defines "computable"
+computability — decidability and the halting problem: where no working code can exist (↔ algorithms/intractability-and-np)
