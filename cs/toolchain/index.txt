@@ -1,0 +1,5 @@
+from source to running program
+compilation-pipeline (L1, L2) — preprocess → compile → assemble → link
+compilers-vs-interpreters (L1, L6) — clang/gcc vs. the Python interpreter
+build-tools (L1) — make, and automating the compile command
+machine-code-and-assembly (L2) — what the CPU actually runs
