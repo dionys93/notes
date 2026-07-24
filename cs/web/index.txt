@@ -1,5 +1,4 @@
 programs on the internet
-how-the-internet-works (L8) — IP, DNS, TCP/IP, HTTP, status codes
 html-and-the-dom (L8) — structure as a tree
 css (L8) — style, selectors, the cascade, responsive design
 javascript-behavior-and-events (L8) — DOM manipulation, event listeners
