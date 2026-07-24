@@ -1,6 +1,0 @@
-string-basics — slicing, searching, replacing, joining (across languages)
-char-arithmetic — letter − 'A', case conversion, the Caesar shift
-regex — pattern matching (the child you were placing)
-parsing-and-tokenizing — turning flat text into structure
-string-search-algorithms — KMP, Boyer-Moore, Rabin-Karp
-edit-distance — Levenshtein, string similarity
