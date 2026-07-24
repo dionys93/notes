@@ -1,0 +1,5 @@
+the mathematical substrate CS rests on
+logic — propositional & predicate logic, proof (↔ architecture/logic-gates, foundations/booleans, theory/)
+set-theory — sets, relations, functions; the vocabulary beneath everything
+category-theory — objects, morphisms, functors; the abstraction of structure (↔ languages/ functional & type systems)
+note — natural neighbors if this grows: discrete-math, probability, proofs, linear-algebra
