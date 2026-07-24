@@ -1,6 +1,0 @@
-persistence at scale
-flat-files-and-csv (L7) — why files don't scale
-relational-model (L7) — tables, primary/foreign keys, normalization
-sql-crud-and-queries (L7) — SELECT, JOIN, aggregates
-indexes (L7) — B-trees, and "is sorting worth it?" at scale
-concurrency-and-transactions (L7) — race conditions, atomicity, locks
