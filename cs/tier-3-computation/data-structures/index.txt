@@ -1,0 +1,8 @@
+organizing data
+arrays (L2) — contiguous, fixed-size, O(1) indexing
+structs (L4, L5) — compound/aggregate custom types
+linked-lists (L5) — nodes + pointers, the arrow operator
+stacks-and-queues (L5) — LIFO/FIFO as abstract data types
+trees-and-bsts (L5) — ordered, searchable, the balancing caveat
+hash-tables (L5) — hashing, collisions, chaining (with C code)
+tries (L5) — the speed/space extreme
