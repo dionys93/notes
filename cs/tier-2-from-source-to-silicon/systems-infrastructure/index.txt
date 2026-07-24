@@ -1,0 +1,7 @@
+running, isolating, and managing real workloads
+virtualization-and-hypervisors — full-machine VMs on shared hardware (KVM, Xen, VMware)
+containers — OS-level isolation via namespaces & cgroups (↔ operating-systems/)
+lxc-and-lxd — system containers that behave like lightweight VMs
+docker-and-images — application containers, layered images, build/run
+init-and-service-management — systemd: booting the system and supervising daemons (↔ operating-systems/processes-and-threads)
+orchestration-and-cloud — scheduling containers across a fleet, e.g. Kubernetes (↔ distributed-systems/)
