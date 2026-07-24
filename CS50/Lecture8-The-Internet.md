@@ -1,4 +1,4 @@
-# CS50 — Lecture 8: HTML, CSS, JavaScript (Deep Dive)
+# CS50 — Lecture 8: HTML, CSS, JavaScript
 ### Putting a program on the internet — structure, style, and behavior
 
 Until now, your programs ran on one machine. This lecture is about the **web**: how data actually travels the internet, and the three languages that build everything you see in a browser. The key organizing idea is a clean division of labor — **HTML** provides structure, **CSS** provides style, and **JavaScript** provides behavior. Three languages, three jobs, kept separate. First, though, you need to know what happens between typing a URL and seeing a page.
