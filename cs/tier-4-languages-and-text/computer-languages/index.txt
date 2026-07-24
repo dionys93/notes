@@ -1,0 +1,6 @@
+the tongues, and comparing them
+c (L1–L5) — the close-to-the-metal foundation
+python (L6) — dynamic, interpreted, batteries-included
+javascript (L8) — the browser's language
+sql (L7) — a declarative query language (different in kind)
+comparative-notes — typing, memory management, hoisting, references, side by side
