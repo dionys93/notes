@@ -1,0 +1,7 @@
+many machines acting as one
+why-distribute — scalability and fault tolerance, and the CAP theorem's trade-off
+consensus — agreeing on a value across unreliable nodes (Paxos, Raft)
+replication-and-consistency — keeping copies in sync; consistency models
+partitioning-and-sharding — splitting data across nodes (↔ data-and-databases/)
+time-and-ordering — clocks, causality, and why "now" is hard across machines
+fault-tolerance — surviving nodes that fail or lie
